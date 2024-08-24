@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        .beer-details-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .beer-details-container h1 {
+            margin-top: 0;
+        }
+        .beer-details {
+            margin: 10px 0;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .back-button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="beer-details-container">
+        <h1>{{ beer.name }}</h1>
+        <div class="beer-details"><strong>Brewery:</strong> {{ beer.brewery }}</div>
+        <div class="beer-details"><strong>Style:</strong> {{ beer.style }}</div>
+        <div class="beer-details"><strong>ABV:</strong> {{ beer.abv }}%</div>
+        <div class="beer-details"><strong>Origin:</strong> {{ beer.originCountry }}</div>
+        <div class="beer-details"><strong>Price:</strong> {{ beer.price.amount }} {{ beer.price.currency }}</div>
+        <p class="beer-description"><strong>Description:</strong> {{ beer.description }}</p>
+        
+        <a href="/beers" class="back-button">Back to List</a>
+    </div>
+
+</body>
+</html>

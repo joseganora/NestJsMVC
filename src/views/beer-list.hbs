@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e8f4ff;
+            margin: 0;
+            padding: 20px;
+        }
+        .beer-list {
+            list-style-type: none;
+            padding: 0;
+        }
+        .beer-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding: 15px;
+            cursor: pointer;
+        }
+        .beer-item a{
+            color: #000;
+            text-decoration: none   ;
+        }
+        .beer-item:hover {
+            background-color: #f1f1f1;
+        }
+        .beer-item h2 {
+            margin-top: 0;
+        }
+        .beer-details {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Beer List</h1>
+    <ul class="beer-list">
+      {{#each beers}}
+        <li class="beer-item" onclick="">
+            <a href="/beers/{{ id }}">
+                <h2>{{name}}</h2>
+                <div class="beer-details">Brewery: {{ name }}</div>
+                <div class="beer-details">Style: {{ style }}</div>
+                <div class="beer-details">ABV: {{ abv }}%</div>
+                <div class="beer-details">Origin: {{ originCountry }}</div>
+                <div class="beer-details">Price: {{ price.amount }} {{ price.currency }}</div>
+                <p class="beer-description">{{ description }}</p>
+            </a>
+        </li>
+      {{/each}}
+    </ul>
+
+</body>
+</html>
