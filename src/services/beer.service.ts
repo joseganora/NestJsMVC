@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { beersHardcode } from 'src/models/beers.harcode';
+import { beersHardcode } from 'src/beers.db';
 
 @Injectable()
 export class BeersService {
